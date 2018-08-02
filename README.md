@@ -1,4 +1,4 @@
-# Udacity >> README
+# README
 
 ## Course work from Udacity
 
