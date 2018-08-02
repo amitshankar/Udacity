@@ -2,7 +2,7 @@
 
 ## Course work from Udacity
 
-Currently, I am taking the Data Analyst Nanodegree from Udacity and am in term 02. This repo is contains subfolders in the following hierarchy:  
+Currently, I am taking the Data Analyst Nanodegree from Udacity and am in term 02. This repo contains subfolders in the following hierarchy:  
 
 ### Data Analyst Nanodegree  
 * **Term 01**
@@ -12,4 +12,9 @@ Currently, I am taking the Data Analyst Nanodegree from Udacity and am in term 0
 * **Term 02**
   * Project 01  
 
-I will frequently update this repo with more content as I progress in learning more about Data.
+I frequently update this repo with more content as I progress in learning more about Data.
+
+
+### Reference
+https://guides.github.com/features/mastering-markdown/
+https://www.udacity.com/courses/all
