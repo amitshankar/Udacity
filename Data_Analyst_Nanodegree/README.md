@@ -1,3 +1,3 @@
-# Udacity >> Data_Analyst_Nanodegree >> README
+# README
 
 More content to follow

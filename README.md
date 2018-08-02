@@ -16,5 +16,5 @@ I frequently update this repo with more content as I progress in learning more a
 
 
 ### Reference
-https://guides.github.com/features/mastering-markdown/
+https://guides.github.com/features/mastering-markdown/  
 https://www.udacity.com/courses/all
