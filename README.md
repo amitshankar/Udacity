@@ -1,2 +1,2 @@
-# udacity
+# Udacity
 Course work from Udacity
