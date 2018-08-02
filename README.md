@@ -5,10 +5,10 @@
 Currently, I am taking the Data Analyst Nanodegree from Udacity and am in term 02. This repo contains subfolders in the following hierarchy:  
 
 ### Data_Analyst_Nanodegree  
-* **Term_01**
-  * Project_01  
-  * Project_02  
-  * Project_03
+* [**Term_01**](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01)
+  * [Project_01](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_01)  
+  * [Project_02](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_02)  
+  * [Project_03](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_03)
 * **Term_02**
   * Project_01  
 
