@@ -4,7 +4,7 @@ Date: 4/5/2018
 Tags: data analyst nanodegree, python, programming
 Summary: This is the second project of term one in the data analyst nanodegree program. This project reads data regarding bart ridership in Chicago, New York, Washington and takes user input regarding a particular state and computes stats with validation in python.
 
-The dataset for the project are located [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_02/datasets){:target="_blank"} and python script that interacts with the data is called final.py located [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_02){:target="_blank"}.
+The dataset for the project are located [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_02/datasets) and python script that interacts with the data is called final.py located [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_02).
 
 
 # Resources
