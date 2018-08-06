@@ -5,10 +5,49 @@ Tags: data analyst nanodegree, python, programming
 Summary: This is the second project of term one in the data analyst nanodegree program. This project reads data regarding bart ridership in Chicago, New York, Washington and takes user input regarding a particular state and computes stats with validation in python.
 
 
+# Resources
+https://stackoverflow.com/questions/1801668/convert-a-python-list-with-strings-all-to-lowercase-or-uppercase
+https://stackoverflow.com/questions/29403192/convert-series-returned-by-pandas-series-value-counts-to-a-dictionary
+https://bytes.com/topic/python/answers/794376-printing-contents-list-one-line
+https://stackoverflow.com/questions/483666/python-reverse-invert-a-mapping
+https://stackoverflow.com/questions/13411544/delete-column-from-pandas-dataframe-using-python-del
 
-The following are the codes that I have enclosed in javascript to add some github luv :)
 
-```javascript
+# Improvements from suggestions from first submission:
+1. Reading only one file instead of all the files into memory.  
+2. Included a display function to display 5 lines at a time.  
+3. Not throwing an error when user enters ChiCAgo instead of Chicago.  
+4. For gender and birth calculations, checking the column names.  
+
+# Statistics Computed
+
+## 1 Popular times of travel (i.e., occurs most often in the start time)
+
+most common month  
+most common day of week  
+most common hour of day  
+
+## 2 Popular stations and trip
+
+most common start station  
+most common end station  
+most common trip from start to end (i.e., most frequent combination of start station and end station)  
+
+## 3 Trip duration
+
+total travel time  
+average travel time  
+
+## 4 User info
+
+counts of each user type  
+counts of each gender (only available for NYC and Chicago)  
+earliest, most recent, most common year of birth (only available for NYC and Chicago)  
+
+
+## The following are the codes for the projgect:
+
+```
 # coding: utf-8
 
 # In[1]:
@@ -294,6 +333,5 @@ if __name__ == "__main__":
 
 
 # In[ ]:
-
 
 ```
