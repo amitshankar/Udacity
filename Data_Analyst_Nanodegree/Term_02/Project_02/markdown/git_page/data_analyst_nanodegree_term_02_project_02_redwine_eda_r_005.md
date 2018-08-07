@@ -1,18 +1,8 @@
----
-title: "Red Wine EDA"
-author: "Amit Shankar"
-date: "July 11, 2018"
-output:
-  html_document:
-    toc: true
----
-
-
-
-
-
-
-
+Title: EDA of Red Wine Dataset with R
+Author: Amit Shankar
+Date: 07/03/2018
+Tags: data analyst nanodegree, python, r
+Summary: This is a exploratory data analysis project for the RedWine data and is second part of the data analysis nanodegree program. The rmarkdown file of the actual scripts, the html file of the renderings and the data set is in the github repo [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_02/Project_02).
 
 
 ```
