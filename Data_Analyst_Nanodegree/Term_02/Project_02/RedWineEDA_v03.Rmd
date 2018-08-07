@@ -1,0 +1,489 @@
+---
+title: "Red Wine EDA"
+author: "Amit Shankar"
+date: "July 11, 2018"
+output:
+  html_document:
+    toc: true
+---
+
+```{r global_options, include=FALSE}
+
+knitr::opts_chunk$set(fig.path = 'images/redwine_eda/',echo = FALSE, 
+                      warning = FALSE, message = FALSE)
+
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, packages}
+
+#Load the libraries
+library(tidyverse)
+library(DataExplorer)
+library(gridExtra) #for printing two plots side by side
+library(grid) # use textGrob function to format title of 2 side by side plots
+library(kableExtra)
+
+```
+
+
+
+```{r echo=FALSE, Load_the_Data}
+#Load the Data
+#Note that data file is in the same folder as the rmd file
+
+#cat('Current working directory is : \n', getwd())
+
+df=read.csv("wineQualityReds.csv") #for knitr
+df$X<-NULL
+
+cat('Red Wine Data Table - Wide Format')
+head(df,20) %>% kable() %>% kable_styling() %>% 
+  scroll_box(width = "100%", height = "300px")
+
+#stacked df
+df_stacked<-gather(df,key='wine_attribute','wine_values')
+
+cat('Red Wine Data Table - Long Format')
+head(df_stacked,20) %>% kable() %>% kable_styling() %>% 
+  scroll_box(width = "100%", height = "300px")
+
+```
+
+##General Information about the data
+This project explores the quality of Red Wine graded by wine experts based
+on sensory data.The dataset contains `r nrow(df)` instances and 
+`r ncol(df)` variables.
+
+
+**Input variables (based on physicochemical tests):**
+ 
+   1. fixed acidity (tartaric acid - g / dm^3)
+   2. volatile acidity (acetic acid - g / dm^3)
+   3. citric acid (g / dm^3)
+   4. residual sugar (g / dm^3)
+   5. chlorides (sodium chloride - g / dm^3
+   6. free sulfur dioxide (mg / dm^3)
+   7. total sulfur dioxide (mg / dm^3)
+   8. density (g / cm^3)
+   9. pH
+   10. sulphates (potassium sulphate - g / dm3)
+   11. alcohol (% by volume)
+
+**Output variable (based on sensory data):**
+
+   12. quality (score between 0 and 10)   
+
+The above information can be found in more detail [here](https://s3.amazonaws.com/udacity-hosted-downloads/ud651/wineQualityInfo.txt) 
+
+**Citation<br>**
+P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. 
+  Modeling wine preferences by data mining from physicochemical properties.
+  In Decision Support Systems, Elsevier, 47(4):547-553. ISSN: 0167-9236.
+  
+  
+##Reference
+https://monashbioinformaticsplatform.github.io/r-more/topics/Rmarkdown.html<br>
+https://s3.amazonaws.com/udacity-hosted-downloads/ud651/wineQualityInfo.txt<br>
+http://www.stat.cmu.edu/~cshalizi/rmarkdown/#title-author-date-output-format-table-of-contents
+https://towardsdatascience.com/simple-fast-exploratory-data-analysis-in-r-with-dataexplorer-package-e055348d9619<br>
+https://www.rdocumentation.org/packages/DataExplorer/versions/0.6.0/vignettes/dataexplorer-intro.Rmd<br>
+https://cran.r-project.org/web/packages/DataExplorer/vignettes/dataexplorer-intro.html<br>
+http://blog.revolutionanalytics.com/2018/02/dataexplorer.html<br>
+https://stackoverflow.com/questions/18046051/setting-individual-axis-limits-with-facet-wrap-and-scales-free-in-ggplot2<br>
+https://ggplot2.tidyverse.org/reference/facet_grid.html
+https://rdrr.io/cran/ggforce/man/facet_wrap_paginate.html
+https://stackoverflow.com/questions/14726078/changing-title-in-multiplot-ggplot2-using-grid-arrange
+https://stackoverflow.com/questions/10014187/displaying-text-below-the-plot-generated-by-ggplot2
+
+
+#Univariate Analysis
+
+## Structure of the dataset
+```{r echo=FALSE, Basic_Summary_Statistics}
+
+str(df)
+
+summary(df)
+
+plot_missing(df)
+
+```
+
+The dataset contains numeric variables. The outcome variable - quality,  
+contains integers between 0 to 10 and this can later be categorized if needed. 
+There are also no missing values in the dataset.
+
+## What is/are the main feature(s) of interest in your dataset?
+```{r}
+
+#histogram of all variables
+g1=ggplot(data=df_stacked, mapping = aes(x=wine_values))+
+  geom_histogram(bins=20)+
+  facet_wrap(~wine_attribute, scales='free')+
+  labs(x = 'Attributes',y = "Frequency",
+       title = "Wine Attributes by Frequeny - No Transformations")
+
+g1
+  
+g2=ggplot(data=df_stacked, mapping = aes(x=log10(wine_values+1)))+
+  geom_histogram(bins=20)+
+  facet_wrap(~wine_attribute, scales='free')+
+  labs(x = 'Attributes',y = "Frequency",
+       title = "Wine Attributes by Frequeny -  Log10 Transformations")
+g2  
+
+```
+
+Density and pH have a fairly normal distribution. 
+Other attributes with long tails could be shortened by transformation
+for easier modeling in future.
+
+Log 10 transformation has helped normalize residual.sugar, sulphates,
+total.sulfur.dioxide and volatile.acidity.
+
+Features of interest are volatile.acidity, citric.acid, pH and alcohol content.
+There relationship with quality will be further explored in bivariate section.
+
+```{r quality_plots}
+
+g1 <- ggplot(data=df, mapping = aes(x='',y=quality))+
+  geom_boxplot()+
+  labs(title = "Boxplot")+
+  theme(plot.title = element_text(size=10))
+
+g2 <- ggplot(data=df, mapping = aes(x=quality))+
+  geom_histogram()+
+  labs(title = "Histogram")+
+  theme(plot.title = element_text(size=10))
+
+title1 <- textGrob("Exploration of Quality Ratings", 
+                   gp=gpar(fontface="bold", fontsize=10))
+grid.arrange(g1,g2, ncol=2, top=title1)
+
+summary(df$quality)
+table(df$quality)
+
+```
+
+Quality is another feature of interest in the dataset. Quality score of 5 and 6
+have occurances of more than 600 where as the quality score of 3  and 9 occur 
+less than 20 times.It can also be observed from the summary statistics as well 
+as the boxplot that median and 3rd quartile are same. In addition, the mean is
+also very close to the median.
+
+## What other features in the dataset do you think will help support your \n investigation into your feature(s) of interest?
+Further investigate if sweetness of wine (residual sugar), increases the 
+quality score. Also, investigate if sweet wines with high alcohol content 
+increases the qualtiy score.
+
+## Did you create any new variables from existing variables in the dataset?
+Out of curosity a new variable was created by multiplying alcohol and sugar to
+explore any relationships between the new variable and quality. This will be
+further explored in the bivariate section.
+
+#Bivariate Analysis
+
+## Relationships between new variable and quality score
+```{r echo=FALSE, alcohol_sugar_plots}
+
+df$alcohol_sugar<- df$residual.sugar*df$alcohol
+
+g1=ggplot(data=df,mapping = aes(x=quality,y=alcohol_sugar))+
+  geom_boxplot(aes(group = cut_width(quality, 0.25)), outlier.alpha = 0.1)+
+  coord_cartesian(ylim = c(10,50))+
+  geom_line(stat='summary', fun.y=median, color='red')+
+  labs(title = "median overlay")+
+  theme(plot.title = element_text(size=10))
+
+g2=ggplot(data=df,mapping = aes(x=quality,y=alcohol_sugar))+
+  geom_boxplot(aes(group = cut_width(quality, 0.25)), outlier.alpha = 0.1)+
+  coord_cartesian(ylim = c(10,50))+
+  geom_line(stat='summary', fun.y=mean, color='blue')+
+  labs(title = "mean overlay")+
+  theme(plot.title = element_text(size=10))
+
+title1 <- textGrob("Boxplot of alcohol_sugar vs quality, 
+                   alcohol_sugar = residual.sugar * acohol", 
+                   gp=gpar(fontface="bold", fontsize=10))
+
+grid.arrange(g1,g2,ncol=2, top=title1)
+
+by(df$alcohol_sugar,df$quality,summary)
+
+```
+
+The quality score gets better as median increase. Also, the quality score gets
+somewhat better as mean increases.
+
+
+## Boxplots between independant variables and quality score
+
+```{r}
+#convert the quality into a factor without actually saving it in dataframe
+#as a factor
+df %>% mutate(quality=as.factor(quality)) %>% plot_boxplot(by='quality')
+
+```
+
+The boxplot indicates the following relationships for:<br> 
+volatile.acidity: lower acidity levels could have a better quality score <br> 
+citric.acid: slightly higher levels could have better quality score <br>
+pH:  lower pH levels have could better quality score <br> 
+alcohol: higher alcohol levels could have better quality score <br> 
+
+## Scatterplots between chosen independant variables and quality score
+
+The graphs below explore features of interest such as volatile.acidity, 
+citric.acid, alcohol and pH content with quality score as outlined in the
+univariate section.
+
+```{r echo=FALSE, univariate_box_plots}
+
+ggplot(df) +
+  geom_boxplot(mapping = aes(x='',y=volatile.acidity, color=as.factor(quality)))+
+  facet_grid(~quality)+
+  theme(axis.title.x = element_blank())+
+  labs(title='Boxplot of Volatile.acidity across Quality', 
+  subtitle='Observation: Lower volatile.acidity level leads to higher 
+  quality scores.', color='quality')
+
+
+
+ggplot(df) +
+  geom_boxplot(mapping = aes(x='',y=citric.acid, color=as.factor(quality)))+
+  facet_grid(~quality)+
+  theme(axis.title.x = element_blank())+
+  labs(title='Boxplot of citric.acid across Quality', 
+       subtitle='Observation: Higher levels of citric.acid leads to higher 
+       quality scores.', color='quality')
+
+ggplot(df) +
+  geom_boxplot(mapping = aes(x='',y=pH, color=as.factor(quality)))+
+  facet_grid(~quality)+
+  theme(axis.title.x = element_blank())+
+  labs(title='Boxplot of pH across Quality', 
+       subtitle='Observation: Lower levels of pH level leads to higher quality
+       scores.', color='quality')
+
+ggplot(df) +
+  geom_boxplot(mapping = aes(x='',y=alcohol, color=as.factor(quality)))+
+  facet_grid(~quality)+
+  theme(axis.title.x = element_blank())+
+  labs(title='Boxplot of Alcohol across Quality', 
+       subtitle='Observation: Higher levels of alcohol content leads to higher 
+       quality scores', color='quality')
+
+```
+
+## Correlation Heatmap
+
+```{r echo=FALSE, correlation_plot}
+
+plot_correlation(df, maxcat = 5L, use = "pairwise.complete.obs",
+                 title = 'Pairwise Correlation Between Variables')
+
+
+```
+
+The Pairwise Correlation heatmap indicates very strong positive correlation 
+between alcohol_sugar and residual.sugar. One reason for the strong correlation
+could be that alcohol_sugar is a new variable that was derived by multiplying
+alchol and residual.sugar.
+
+## Relationships between independant variables
+
+Two relationships that could be further investigated are:<br>
+a. relationship between pH and fixed.acidity (inverse relationship)<br>
+b. relationship between citric.acid and fixed.acidity (direct relationship)<br>
+
+### Exploring the relationship between pH vs fixed.acidity
+
+```{r echo=FALSE, pH_vs_fixed_acidity}
+
+g1 <- ggplot(data=df, mapping = aes(x=pH, y=fixed.acidity))+
+  geom_point(alpha=1/10)+  
+  labs(title = "Default Smoother")+geom_smooth()+
+  theme(plot.title = element_text(size=12))
+
+g2 <- ggplot(data=df, mapping = aes(x=pH, y=fixed.acidity))+
+  geom_point(alpha=1/10)+  
+  labs(title = "Linear Fit")+geom_smooth(method = lm)+
+  theme(plot.title = element_text(size=12))
+
+
+title1 <- textGrob("Fixed.acidity vs pH Scatterplot", gp=gpar(fontface="bold", fontsize=12))
+
+grid.arrange(g1,g2,ncol=2, top=title1)
+
+```
+
+It can be observed from the Fixed.acidity vs pH scatter plot that
+pH and fixed.acidity are inversely related.
+
+### Exploring the relationship between citrix.acid vs fixed.acidity
+
+```{r echo=FALSE, citric_acid_vs_fixed_acidity}
+
+#relationship between citric.acid and fixed.acidity (direct relationship)
+g1<- ggplot(data = df, mapping = aes(x=citric.acid, y=fixed.acidity))+
+  geom_point(alpha=1/10)+geom_smooth()+
+  labs(title='Default Smoother')+
+  theme(plot.title = element_text(size=12))
+
+g2<- ggplot(data = df, mapping = aes(x=citric.acid, y=fixed.acidity))+
+  geom_point(alpha=1/10)+geom_smooth(method = lm)+
+  labs(title='Linear Smoother')+
+  theme(plot.title = element_text(size=12))
+
+title1 <- textGrob("Fixed.acidity vs Citric.acid Scatterplot", 
+                   gp=gpar(fontface="bold", fontsize=12))
+
+grid.arrange(g1,g2,ncol=2, top=title1)
+
+```
+
+The citric.acid vs fixed.acidity plot shows a direct relationship between 
+concentrations of fixed.acidity and citric.acid.
+
+# Multivariate Analysis
+Exploring the relationship between residual.sugar, alcohol and quality.
+Could sweet wine with high alcohol content have higher quality score?
+
+```{r echo=FALSE,sugar_alcohol_quality}
+
+#three variables box plot - keep
+#could sweet wine with high alcohol have high scores
+g1=ggplot(df, mapping = aes(x=residual.sugar,y=alcohol, 
+                            color=as.factor(quality)))+
+  geom_point()+
+  geom_smooth(method = lm)+labs(color='quality')+
+  facet_grid(~quality)
+#g1
+
+g2=ggplot(df) +
+  geom_boxplot(mapping = aes(x=residual.sugar,y=alcohol, 
+                             color=as.factor(quality)))+
+  labs(color='quality')+
+  facet_grid(~quality)
+
+#g2
+grid.arrange(g1,g2, nrow=2)
+
+```
+
+It can be seen that residual sugar of less than 5, alcohol percent of 10 or 
+higher get better quality rating. This means that a wine that is not sweet but
+has a higher alcohol content gets a favorably higher rating.
+
+# Final Plots and Summary
+
+## Transformation Plots
+
+```{r echo=FALSE, transformation_plots}
+
+# Plot 1a and 1b
+#log 10 transformation of total.sulfur.dioxide
+g1 <- ggplot(data=df, mapping = aes(x=total.sulfur.dioxide))+
+  geom_histogram(bins=12)+
+  labs(title='Before Transformation', x='total.sulfur.dioxide (mg / dm^3)')+
+  theme(plot.title = element_text(size=12))
+
+
+g2 <- ggplot(data=df, mapping = aes(x=log10(total.sulfur.dioxide+1)))+
+    geom_histogram(bins=12)+
+    labs(title='After log10 Transformation')+
+    theme(plot.title = element_text(size=12))
+
+
+title1 <- textGrob("1.0 Histogram of total.sulfur.dioxide", 
+                   gp=gpar(fontface="bold", fontsize=12))
+
+grid.arrange(g1,g2, ncol=2, top=title1)
+
+```
+
+Log10 transformation of total.sulfur.dioxide variable is effective in 
+normalizing the distribution for future modeling.
+
+## Effect of pH on red wine quality
+
+```{r echo=FALSE, pH_plots}
+
+g1 <- ggplot(df) +
+  geom_boxplot(mapping = aes(x='',y=pH, color=as.factor(quality)))+
+  facet_grid(~quality)+coord_cartesian(ylim = c(3,3.6))+
+  labs(title='Boxplot of pH \n Across Quality', color='')+
+  theme(legend.position="bottom", plot.title = element_text(size=10))
+
+pH<- df %>% group_by(quality) %>% 
+  summarise(pH_mean=mean(pH), pH_median=median(pH))
+
+g2 <- ggplot(data=pH)+
+  geom_line(mapping = aes(x=pH_mean, y=quality, color='pH_mean'))+
+  geom_line(mapping = aes(x=pH_median, y=quality, color='pH_median'))+
+  labs(title='Summarized \n pH mean and pH median', x ='pH', color='')+
+  theme(legend.position="bottom", plot.title = element_text(size=10))
+
+by(df$pH, df$quality, summary)  
+
+title1 <- textGrob("2.0 Effect of pH on Quality", 
+                   gp=gpar(fontface="bold", fontsize=10))
+
+grid.arrange(g1,g2, ncol=2, top=title1)
+
+```
+
+The pH is based on a log 10 scale.It can be seen that wines with pH less than
+3.3 have a higher quality score. THis means, acidic wines have better quality
+score.
+
+## Relationship between citric_acid and fixed_acidity
+
+```{r echo=FALSE, citric_acid_vs_fixed_acidity_v1}
+
+#relationship between citric.acid and fixed.acidity (direct relationship)
+ggplot(data = df, mapping = aes(x=citric.acid, y=fixed.acidity))+
+  geom_point(alpha=1/10)+geom_smooth(method = lm)+
+  labs(title='Scatterplot of fixed.acidity vs citric.acid', 
+       x='citric.acid (g / dm^3)', y='fixed.acidity (g / dm^3)')
+
+```
+
+A direct relationship can be observed between critic.acid and fixed.acidity.
+This makes sense as higher concentration of citric.acid could increase the
+fixed.acidity concentration, making the red wine more wine more acidic.
+
+
+#Reflection
+
+In univariate analysis, the focus was to observe the distribution of each 
+variable with the aid of boxplots and histograms. Also, applied log10 
+transformation to normalize the data. Log10 transformation only worked 
+a few variables.It should also be noted that the dependant variable 
+(quality) did not have enough data points. Score of 3 only occured 10 times
+and score of 8 occured only 18 times. This could cause issues during 
+data modeling as fewer data points may make it harder to determine the testing
+and training sample.
+
+The correlation plot was very helpful in deciding which variables to explore
+during bivariate analysis. The correlation plot helped in identifying
+variables that were directly and inversely related.
+
+In multivariate analysis, two independant variables were explored in relation
+to the dependant variable and facet_grid feature of ggplot was very helpful.
+
+##Future Improvement
+
+1. Explore other ways of transforming the data such as applying the 
+squareroot function to normalize data.
+
+2. The documentation for the red wine dataset states that the quality score
+is between 0 to 10 but when the data set was closely examined, there were
+no data points for quality scores 0,1,2,3,9,10. Therefore, the dataset
+does not fully represent all the quality scores and this limits the extent
+of the data exploration in this project. One suggestion is to include more 
+of the corresponding data points that are currently not present in 
+the dataset.
+
