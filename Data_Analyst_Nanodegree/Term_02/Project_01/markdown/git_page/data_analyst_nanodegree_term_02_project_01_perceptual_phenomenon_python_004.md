@@ -2,13 +2,14 @@ Title: Hypothesis testing the Stroop Effect
 Author: Amit Shankar
 Date: 06/18/2018
 Tags: data analyst nanodegree, python, hypothesis testing
-Summary: This project explores the TMDb movie data set from Udacity's curated data site. 
-The dataset is also attached in the data folder. The data set contains information on approximately 10,000 movies.
+Summary: This is the second project of term 02 in the data analyst nanodegree program. In this project, we exammined the data regarding the Stroop Effect and performed a two tailed test.
 
+The following information presented below about the Stroop effect can be found [here](https://docs.google.com/document/d/1-OkpZLjG_kX9J6LIQ5IltsqMzVWjh36QpnP2RYpVdPU/pub?embedded=True).  
 
+What is Stroop Effect: In a Stroop task, participants are presented with a list of words, with each word displayed in a color of ink. The participant’s task is to say out loud the color of the ink in which the word is printed. The task has two conditions: a congruent words condition, and an incongruent words condition. In the congruent words condition, the words being displayed are color words whose names match the colors in which they are printed: for example RED, BLUE. In the incongruent words condition, the words displayed are color words whose names do not match the colors in which they are printed: for example PURPLE, ORANGE. In each case, we measure the time it takes to name the ink colors in equally-sized lists. Each participant will go through and record a time from each condition.  
+Source: https://docs.google.com/document/d/1-OkpZLjG_kX9J6LIQ5IltsqMzVWjh36QpnP2RYpVdPU/pub?embedded=True
 
-### Analyzing the Stroop Effect
-Perform the analysis in the space below. Remember to follow [the instructions](https://docs.google.com/document/d/1-OkpZLjG_kX9J6LIQ5IltsqMzVWjh36QpnP2RYpVdPU/pub?embedded=True) and review the [project rubric](https://review.udacity.com/#!/rubrics/71/view) before submitting. Once you've completed the analysis and write-up, download this file as a PDF or HTML file, upload that PDF/HTML into the workspace here (click on the orange Jupyter icon in the upper left then Upload), then use the Submit Project button at the bottom of this page. This will create a zip file containing both this .ipynb doc and the PDF/HTML doc that will be submitted for your project.
+The dataset called stroopdata.csv and the ipython notebook can be found [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_02/Project_01).
 
 
 (1) What is the independent variable? What is the dependent variable?
