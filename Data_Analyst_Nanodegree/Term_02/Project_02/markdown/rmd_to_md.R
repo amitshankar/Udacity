@@ -45,9 +45,18 @@ knit(rmd_file_name, paste('git_page/',md_file_name,sep = ''))
 #from.dir <- "images/redwine_eda"
 from.dir <-paste('images/',image_subfolder_name,sep = '')
 
-mkdirs("git_page/images")
-to.dir   <- "git_page/images/"
+#create a subfolder in git_page>>images>>image_subfolder_name
+#mkdirs("git_page/images")
+mkdirs(paste('git_page/images/',image_subfolder_name,sep=''))
+
+
+#to.dir   <- "git_page/images/"
+to.dir   <- paste('git_page/images/',image_subfolder_name,sep='')
+
+#save paths to all the image files
 files    <- list.files(path = from.dir, full.names = TRUE, recursive = TRUE)
+
+#iterate and save files to images subfolder in git_page folder
 for (f in files) file.copy(from = f, to = to.dir)
 
 #delete the images directory
