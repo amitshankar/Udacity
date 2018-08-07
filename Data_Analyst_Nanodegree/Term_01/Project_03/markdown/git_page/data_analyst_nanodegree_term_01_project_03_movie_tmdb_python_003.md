@@ -1,9 +1,13 @@
-
+Title: Movie tmdb EDA in Python
+Author: Amit Shankar
+Date: 5/7/2018
+Tags: data analyst nanodegree, python, eda
+Summary: This is the third project of term one in the data analyst nanodegree program. This project reads TMDb movie dataset and performs EDA using jupyter python.
  
 
 <a id='top'> </a>
 This project explores the TMDb movie data set from Udacity's curated data site. 
-The dataset is also attached in the data folder. The data set contains information on approximately 10,000 movies.
+The dataset can be found [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_03/data) and the jupyter script is [here](*****). The data set contains information on approximately 10,000 movies.
 Also brief overview can be found [here](#overview).
 <br>
 <br>
@@ -156,7 +160,7 @@ top_profitable_movies(df,10)
 ```
 
 
-![png](images/project_03_01/project_03_01_13_0.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_13_0.png)
 
 
 Observation: As stated earlier, Avatar was the most profitable move that came out in 2009.Year 2015 was exciting for movie goers
@@ -920,7 +924,7 @@ average_run_time(df)
 ```
 
 
-![png](images/project_03_01/project_03_01_28_0.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_28_0.png)
 
 
 Observation: Average running time is 104 minutes.History, war, western and drame movies are above the average running time. These genre's could also reflect the age of people - mostly older people that have more time and less busy.
@@ -956,7 +960,7 @@ common_movie_directors(df)
 ```
 
 
-![png](images/project_03_01/project_03_01_33_0.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_33_0.png)
 
 
 Observation: Woody Allen was the most common director followed by Clint Eastwood.Also, interesting to note that Steven Spielberg
@@ -987,7 +991,7 @@ most_profitable_directors(df)
 ```
 
 
-![png](images/project_03_01/project_03_01_37_0.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_37_0.png)
 
 
 Observation: The above graph shows that most common movie directors are not the most profitable ones. Steven Speilberg is the 
@@ -1288,83 +1292,83 @@ for i in get_genre(df):
 ```
 
 
-![png](images/project_03_01/project_03_01_53_0.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_0.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_1.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_1.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_2.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_2.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_3.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_3.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_4.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_4.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_5.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_5.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_6.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_6.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_7.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_7.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_8.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_8.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_9.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_9.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_10.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_10.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_11.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_11.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_12.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_12.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_13.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_13.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_14.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_14.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_15.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_15.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_16.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_16.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_17.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_17.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_18.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_18.png)
 
 
 
-![png](images/project_03_01/project_03_01_53_19.png)
+![png](images/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003/data_analyst_nanodegree_term_01_project_03_movie_tmdb_python_003_53_19.png)
 
 
 
