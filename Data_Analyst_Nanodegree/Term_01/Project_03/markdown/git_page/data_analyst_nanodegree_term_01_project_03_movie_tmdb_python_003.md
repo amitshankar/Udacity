@@ -7,8 +7,9 @@ Summary: This is the third project of term one in the data analyst nanodegree pr
 
 <a id='top'> </a>
 This project explores the TMDb movie data set from Udacity's curated data site. 
-The dataset can be found [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_03/data) and the jupyter script is [here](*****). The data set contains information on approximately 10,000 movies.
+The dataset can be found [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_03/data) and the  project_03_01.ipynb is the jupyter script located in github repo subfolder [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_03). The data set contains information on approximately 10,000 movies.
 Also brief overview can be found [here](#overview).
+
 <br>
 <br>
 Questions that will be investigated:
