@@ -4,8 +4,7 @@ Date: 5/7/2018
 Tags: data analyst nanodegree, python, eda
 Summary: This is the third project of term one in the data analyst nanodegree program. This project reads TMDb movie dataset and performs EDA using jupyter python.
  
-
-<a id='top'> </a>
+<a id='top'> </a><br>
 This project explores the TMDb movie data set from Udacity's curated data site. 
 The dataset can be found [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_03/data) and the  project_03_01.ipynb is the jupyter script located in github repo subfolder [here](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01/Project_03). The data set contains information on approximately 10,000 movies.
 Also brief overview can be found [here](#overview).
