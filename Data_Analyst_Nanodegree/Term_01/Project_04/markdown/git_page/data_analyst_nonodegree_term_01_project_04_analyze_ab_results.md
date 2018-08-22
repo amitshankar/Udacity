@@ -1,3 +1,4 @@
+<img src="https://latex.codecogs.com/gif.latex?p_n" title="p_n" /> and <img src="https://latex.codecogs.com/gif.latex?p_n" title="p_n" /> and <img src="https://latex.codecogs.com/gif.latex?p_n" title="p_n" />.
 
 ## Analyze A/B Test Results
 
