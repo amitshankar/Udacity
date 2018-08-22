@@ -2,7 +2,8 @@
 
 ## Course work from Udacity
 
-I am taking the Data Analyst Nanodegree from Udacity. Currently I am in the second term. This repo contains subfolders in the following hierarchy:  
+Currently I am in the second term of the Data Analyst Nanodegree program from Udacity.  
+This repo contains subfolders in the following hierarchy:  
 
 ### Data_Analyst_Nanodegree  
 * [**Term_01**](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01)
