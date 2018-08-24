@@ -1,6 +1,3 @@
 # README
 
-This is the first project of term two in the data analyst nanodegree program. 
-
-This is the second project of term one in the data analyst nandegree program. Project 02 deals with exploring the data regarding bike share systems for three major cities in the United States—Chicago, New York City, and Washington. The script for this project is written in python and is executed on the python 
-terminal. When executed, the script will also take user inputs, validate them and display descriptive statistics accordingly. This project mainly focussed on the building blocks of python such as the properly using for loops and using functions for repetitive tasks.
+This is the second project of term 02 in the data analyst nanodegree program. In this project, we examined the data regarding the Stroop Effect and performed a two tailed test. Performed a t-statistic test and found the Type I error to either accept or reject the null hypothesis.
