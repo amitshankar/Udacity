@@ -15,11 +15,6 @@ https://stackoverflow.com/questions/483666/python-reverse-invert-a-mapping
 https://stackoverflow.com/questions/13411544/delete-column-from-pandas-dataframe-using-python-del
 
 
-# Improvements from suggestions from first submission:
-1. Reading only one file instead of all the files into memory.  
-2. Included a display function to display 5 lines at a time.  
-3. Not throwing an error when user enters ChiCAgo instead of Chicago.  
-4. For gender and birth calculations, checking the column names.  
 
 # Statistics Computed
 
@@ -47,7 +42,7 @@ counts of each gender (only available for NYC and Chicago)
 earliest, most recent, most common year of birth (only available for NYC and Chicago)  
 
 
-## The following are the codes for the projgect:
+## The following are the codes for the project:
 
 ```
 # coding: utf-8

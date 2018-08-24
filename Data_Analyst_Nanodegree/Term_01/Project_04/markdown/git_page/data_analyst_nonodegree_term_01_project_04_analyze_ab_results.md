@@ -778,8 +778,8 @@ These questions are the difficult parts associated with A/B tests in general.
 
 `1.` For now, consider you need to make the decision just based on all the data provided.  If you want to assume that the old page is better unless the new page proves to be definitely better at a Type I error rate of 5%, what should your null and alternative hypotheses be?  You can state your hypothesis in terms of words or in terms of **$p_{old}$** and **$p_{new}$**, which are the converted rates for the old and new pages.
 
-$$H_0:P_{old}-P_{new}>=0 $$     
-$$H_1:P_{new}-P_{old}>0 $$
+$$H_0:p_{old}-p_{new}>=0 $$     
+$$H_1:p_{new}-p_{old}>0 $$
 
 alpha=0.05<br>
 To reject the null hypothesis: p<alpha 
@@ -2291,8 +2291,8 @@ https://www.researchgate.net/post/What_does_it_mean_in_a_logistic_regression_mod
 
 
 ```python
-from subprocess import call
-call(['python', '-m', 'nbconvert', 'Analyze_ab_test_results_notebook.ipynb'])
+#from subprocess import call
+#call(['python', '-m', 'nbconvert', 'Analyze_ab_test_results_notebook.ipynb'])
 ```
 
 
