@@ -2,7 +2,7 @@ Title: Hypothesis testing the Stroop Effect
 Author: Amit Shankar
 Date: 06/18/2018
 Tags: data analyst nanodegree, python, hypothesis testing
-Summary: This is the second project of term 02 in the data analyst nanodegree program. In this project, we exammined the data regarding the Stroop Effect and performed a two tailed test.
+Summary: This is the second project of term 02 in the data analyst nanodegree program. In this project, we examined the data regarding the Stroop Effect and performed a two tailed test.
 
 The following information presented below about the Stroop effect can be found [here](https://docs.google.com/document/d/1-OkpZLjG_kX9J6LIQ5IltsqMzVWjh36QpnP2RYpVdPU/pub?embedded=True).  
 
@@ -69,7 +69,8 @@ print(df.info())
     2      9.564       21.214
     3      8.630       15.687
     4     14.669       22.803
-    
+
+
     
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 24 entries, 0 to 23
@@ -79,7 +80,7 @@ print(df.info())
     dtypes: float64(2)
     memory usage: 464.0 bytes
     None
-    
+
 
 
 ```python
@@ -98,7 +99,7 @@ df.describe()
     .dataframe thead th {
         text-align: left;
     }
-
+    
     .dataframe tbody tr th {
         vertical-align: top;
     }
@@ -178,15 +179,17 @@ print('Incongruent variance: ' +str(df.Incongruent.var()))
     Congruent mean: 14.051125
     Incongruent mean: 22.0159166667
     Difference between congruent and incongruent mean -7.96479166667
-    
+
+
     
     Congruent median: 14.3565
     Incongruent median: 21.0175
-    
+
+
     
     Congruent variance: 12.6690290707
     Incongruent variance: 23.0117570362
-    
+
 
 
 ```python
@@ -255,7 +258,7 @@ print('p value is '+str(p_val))
 
     t statistic is -8.02070694411
     p value is 4.10300058571e-08
-    
+
 
 
 ```python
@@ -271,7 +274,7 @@ print('Confidence interval to accept null hypothesis if \n t statistic is betwee
 
     Confidence interval to accept null hypothesis if 
      t statistic is between: -2.06865761042 and 2.06865761042
-    
+
 
 **Observation:**<br>
 <br>
