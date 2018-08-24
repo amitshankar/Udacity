@@ -8,5 +8,5 @@ In this project, we examined the data regarding the Stroop Effect and performed 
 ## Project 02
 Used R to perform EDA. Performed univariate, bivariate and multivariate analysis on the redwine data.
 
-[Project 02 Files](https://amitshankar.github.io/eda-of-red-wine-dataset-with-r.html)
+[Project 02 Files](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_02/Project_02)
 
