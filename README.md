@@ -3,7 +3,7 @@
 ## Course work from Udacity
   
 Recently I completed a Data Analyst Nanodegree from Udacity. 
-This repo contains project subfolders in the following hierarchy:  
+This repo contains project files that I completed as part of the Data Analyst Nanodegree course.  
   
 ### Data_Analyst_Nanodegree  
 * [**Term_01**](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_01)
