@@ -5,7 +5,7 @@ This is the fourth project in second term of the data analyst nanodegree program
 
 
 # Documentation
-Chose the Flights data set from https://docs.google.com/document/d/1w7KhqotVi5eoKE3I_AZHbsxdr-NmcWsLTIiZrpxWx4w/pub?embedded=true .
+Chose the Flights data set from http://stat-computing.org/dataexpo/2009/the-data.html .
 I tried importing all the csv files into Tableau, but the free version only allows for 15,000,000 rows of data. Therefore, I chose to analyze the two most recent datasets: 2007 and 2008 flight data.
 
 I created a union of 2007 and 2008 dataset and then an intersection with the carrier’s dataset to extract the proper names for each unique airline carrier.
