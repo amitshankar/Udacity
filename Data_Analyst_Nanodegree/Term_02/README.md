@@ -14,3 +14,8 @@ Used R to perform EDA. Performed univariate, bivariate and multivariate analysis
 Used python to perform data wrangling on twitter feed.
 
 [Project 03 Files](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_02/Project_03)
+
+## Project 04
+Used Tableau to create a story board for Flights data.
+
+[Project 04 Files](https://github.com/amitshankar/Udacity/tree/master/Data_Analyst_Nanodegree/Term_02/Project_04)
