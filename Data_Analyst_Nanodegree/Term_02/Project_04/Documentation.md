@@ -1,9 +1,3 @@
-# README
-
-# Summary
-This is the fourth project in second term of the data analyst nanodegree program. This project focussed on analyzing Flights Data from 2007 and 2008 in Tableau and creating a 'Tableau Story' for presenting the highlights. The story board can be accessed [here](https://public.tableau.com/profile/amit.kumar.shankar#!/vizhome/Udacity_Tableau_Project_Story_v4/ExplorationofFlightsDataset-Story-Final). 
-
-
 # Documentation
 Chose the Flights data set from https://docs.google.com/document/d/1w7KhqotVi5eoKE3I_AZHbsxdr-NmcWsLTIiZrpxWx4w/pub?embedded=true .
 I tried importing all the csv files into Tableau, but the free version only allows for 15,000,000 rows of data. Therefore, I chose to analyze the two most recent datasets: 2007 and 2008 flight data.
