@@ -21,6 +21,6 @@ DATE(DATEPARSE("YYYY-MM-dd",STR([Year])+"-"+STR([Month])+"-"+STR([Dayof Month]))
 ## Note: 
 The story board best renders on a chrome browser in full screen mode. 
 
-## Good workflow I learnt is  :
+## Good workflow I learnt was to  :
 create worksheet -> embed worksheet to dashborad and polish your presentation-> embed dashboard to storyboard
 
